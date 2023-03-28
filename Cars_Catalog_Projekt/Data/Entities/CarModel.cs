@@ -1,16 +1,19 @@
 ﻿namespace Cars_Catalog_Projekt.Data.Entities
 {
-    public class Model
+    public class CarModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int BrandsId { get; set; }
+        public int BrandId { get; set; }
 
-        public Model(int id, string name, int brandsId)
+        public CarModel()
+        { }
+
+        public CarModel(int id, string name, int brandId)
         {
             Id = id;
             Name = name;
-            BrandsId = brandsId;
+            BrandId = brandId;
         }
 
 

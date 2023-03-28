@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Create Model</h2>
+<form method="post" asp-controller="Model" asp-action="Create">
+    <p>
+        <span>Brand id:</span>
+        <input type="number" name="brandId" />
+    </p>
+    <p>
+        <span>Model:</span>
+        <input type="text" name="name" />
+    </p>
+    <button type="submit">Create Model</button>
+</form>

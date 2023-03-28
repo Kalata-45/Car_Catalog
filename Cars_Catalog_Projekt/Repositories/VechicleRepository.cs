@@ -1,6 +1,7 @@
 ﻿using Cars_Catalog_Projekt.Data;
 using Cars_Catalog_Projekt.Data.Entities;
 using Cars_Catalog_Projekt.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cars_Catalog_Projekt.Repositories
 {
@@ -22,6 +23,7 @@ namespace Cars_Catalog_Projekt.Repositories
         public void DeleteVechicle(int id)
         {
             context.Vechicles.Remove(GetVechicleById(id));
+            
             context.SaveChanges();
 
             //throw new NotImplementedException();

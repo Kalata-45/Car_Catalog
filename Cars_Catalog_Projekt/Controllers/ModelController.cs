@@ -22,7 +22,7 @@ namespace Cars_Catalog_Projekt.Controllers
 
         [HttpPost]
 
-        public IActionResult Create(Model model)
+        public IActionResult Create(CarModel model)
         {
             modelService.AddModel(model);
             return RedirectToAction(nameof(Index));
@@ -34,7 +34,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(model);
         }
 
-        public IActionResult Edit(Model model)
+        public IActionResult Edit(CarModel model)
         {
             modelService.EditModel(model);
             return RedirectToAction(nameof(Index));

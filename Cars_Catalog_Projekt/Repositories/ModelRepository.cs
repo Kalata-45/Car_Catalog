@@ -12,7 +12,7 @@ namespace Cars_Catalog_Projekt.Repositories
         {
             this.context = context;
         }
-        public void AddModel(Model model)
+        public void AddModel(CarModel model)
         {
             context.Models.Add(model);
             context.SaveChanges();
@@ -27,14 +27,14 @@ namespace Cars_Catalog_Projekt.Repositories
             //throw new NotImplementedException();
         }
 
-        public void EditModel(Model model)
+        public void EditModel(CarModel model)
         {
             context.Models.Update(model);
             context.SaveChanges();
             //throw new NotImplementedException();
         }
 
-        public Model GetModelById(int id)
+        public CarModel GetModelById(int id)
         {
             return context.Models.FirstOrDefault(m => m.Id == id);
 

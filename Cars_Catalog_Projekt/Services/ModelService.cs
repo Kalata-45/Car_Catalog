@@ -14,7 +14,7 @@ namespace Cars_Catalog_Projekt.Services
             this.modelRepository = modelRepository;
         }
 
-        public void AddModel(Model model)
+        public void AddModel(CarModel model)
         {
             modelRepository.AddModel(model);
 
@@ -29,14 +29,14 @@ namespace Cars_Catalog_Projekt.Services
             //throw new NotImplementedException();
         }
 
-        public void EditModel(Model model)
+        public void EditModel(CarModel model)
         {
             modelRepository.EditModel(model);
 
             //throw new NotImplementedException();
         }
 
-        public Model GetModelById(int id)
+        public CarModel GetModelById(int id)
         {
             return modelRepository.GetModelById(id);
 

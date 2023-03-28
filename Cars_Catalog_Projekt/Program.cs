@@ -14,7 +14,7 @@ var connectionString =
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-//
+
 builder.Services.AddDbContext<ApplicationContext>(c => c.UseMySQL(connectionString));
 
 builder.Services.AddScoped<IVechicleRepository, VechicleRepository>();

@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Create Vechicle</h2>
+<form method="post" asp-controller="Vechicle" asp-action="Create">
+    <p>
+        <span>Model id:</span>
+        <input type="number" name="modelid" />
+    </p>
+    <p>
+        <span>Model year:</span>
+        <input type="number" name="year" />
+    </p>
+    <p>
+        <span>Color:</span>
+        <input type="text" name="color" />
+    </p>
+    <p>
+        <span>Displacement:</span>
+        <input type="number" name="displacement" />
+    </p>
+    <p>
+        <span>Performance:</span>
+        <input type="number" name="performance" />
+    </p>
+    <p>
+        <span>Drive type:</span>
+        <input type="text" name="driveType" />
+    </p>
+    <p>
+        <span>Fuel:</span>
+        <input type="text" name="fuel" />
+    </p>
+    <p>
+        <span>Transmission:</span>
+        <input type="text" name="transmission" />
+    </p>
+    <p>
+        <span>Doors count:</span>
+        <input type="number" name="doorsCount" />
+    </p>
+
+    <button type="submit">Create Vechicle</button>
+</form>
