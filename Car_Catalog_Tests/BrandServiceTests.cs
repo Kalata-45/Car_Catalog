@@ -91,6 +91,22 @@ namespace Car_Catalog_Tests
             VerifyBrandProperties(id, name);
         }
 
+        [Test]
+        public void DeleteShouldRemoveBrandCorrectly()
+        {
+            int id = 4;
+            string name = "Brand";
+
+            Brand brand = new Brand(id,name);
+            brandRepository.AddBrand(brand);
+
+            brandService.DeleteBrand(id);
+
+            Brand deletedBrand = brandRepository.GetBrandById(id);
+            Assert.IsNull(deletedBrand);
+        }
+
+
         
     }
 }
