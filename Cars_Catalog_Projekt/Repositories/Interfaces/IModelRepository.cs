@@ -7,6 +7,9 @@ namespace Cars_Catalog_Projekt.Repositories.Interfaces
         // Get Model by id
         CarModel GetModelById(int id);
 
+        // Get All
+        IEnumerable<CarModel> GetAll();
+
         // Edit existing item
         void EditModel(CarModel model);
 

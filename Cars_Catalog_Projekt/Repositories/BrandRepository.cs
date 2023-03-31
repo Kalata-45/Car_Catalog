@@ -40,5 +40,10 @@ namespace Cars_Catalog_Projekt.Repositories
 
             //throw new NotImplementedException();
         }
+
+        public IEnumerable<Brand> GetAll() 
+        {
+            return context.Brands.ToList();
+        }
     }
 }

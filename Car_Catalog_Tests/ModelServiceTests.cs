@@ -11,6 +11,8 @@ using Cars_Catalog_Projekt.Data.Entities;
 using Cars_Catalog_Projekt.Repositories;
 using Cars_Catalog_Projekt.Services;
 using System.Net.Http.Headers;
+using Cars_Catalog_Projekt.Repositories.Interfaces;
+using Cars_Catalog_Projekt.Services.Interfaces;
 
 namespace Car_Catalog_Tests
 {
@@ -64,6 +66,14 @@ namespace Car_Catalog_Tests
             modelRepository.AddModel(model);
             Assert.NotNull(modelService.GetModelById(id));
             VerifyModelProperties(id, name, brandId);
+        }
+
+        [Test]
+        public void GetAllShouldReturnAllModelss()
+        {
+            CarModel model = new CarModel(10, "NewModel", 2);
+            modelService.AddModel(model);
+            Assert.True(modelRepository.GetAll().Count() > 0);
         }
 
         [Test]

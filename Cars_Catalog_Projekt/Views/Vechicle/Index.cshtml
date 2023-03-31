@@ -1,14 +1,31 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
 
+<button>
+    <a asp-controller="Vechicle" asp-action="Create">Create new</a>
+</button>
+
 @model List<Vechicle>
 @foreach (var vechicle in Model)
 {
         <div>
-            <p style="">Vechicle: @vechicle.ModelId</p>
+        <p style="">Vechicle: @vechicle.ModelId &nbsp; Model Year: @vechicle.Year &nbsp; Color: @vechicle.Color
+            &nbsp; Displacement: @vechicle.Displacement &nbsp; Performance: @vechicle.Performance &nbsp; DriveType: @vechicle.DriveType
+            &nbsp; Fuel: @vechicle.Fuel &nbsp; Transmission: @vechicle.Transmission &nbsp; DoorsCount: @vechicle.DoorsCount
+        </p>
+
+            <button>
+                <a asp-controller="Vechicle" asp-action="Edit" asp-route-id="@vechicle.Id">Edit</a>
+            </button>
+
+            <button>
+                <a asp-controller="Vechicle" asp-action="Delete" asp-route-id="@vechicle.Id">Delete</a>
+            </button>
+
         </div>
 }
 

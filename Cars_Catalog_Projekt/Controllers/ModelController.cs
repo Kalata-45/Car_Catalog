@@ -14,6 +14,12 @@ namespace Cars_Catalog_Projekt.Controllers
             this.modelService = modelService;
         }
 
+        public IActionResult Index()
+        {
+            var models = modelService.GetAll();
+
+            return View(models);
+        }
 
         public IActionResult Create()
         {

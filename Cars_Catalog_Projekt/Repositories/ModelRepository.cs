@@ -40,5 +40,10 @@ namespace Cars_Catalog_Projekt.Repositories
 
             //throw new NotImplementedException();
         }
+
+        public IEnumerable<CarModel> GetAll()
+        {
+            return context.Models.ToList();
+        }
     }
 }

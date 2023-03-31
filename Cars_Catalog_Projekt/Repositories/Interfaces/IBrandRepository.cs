@@ -7,6 +7,9 @@ namespace Cars_Catalog_Projekt.Repositories.Interfaces
         // Get Brand by id
         Brand GetBrandById(int id);
 
+        // Get All
+        IEnumerable<Brand> GetAll();
+
         // Edit existing item
         void EditBrand(Brand brand);
 

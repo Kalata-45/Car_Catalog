@@ -1,0 +1,60 @@
+﻿@model Vechicle
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2> Delete Vechicle</h2>
+
+<form method="post" asp-controller="Vechicle" asp-action="DeleteConfirm" asp-route-id="@Model.Id">
+    <p>
+        <span>Model:</span>
+        <input type="text" name="modelId" value="@Model.ModelId" disabled />
+    </p>
+
+    <p>
+        <span>Model Year:</span>
+        <input type="number" name="year" value="@Model.Year" disabled />
+    </p>
+
+    <p>
+        <span>Color:</span>
+        <input type="text" name="color" value="@Model.Color" disabled />
+    </p>
+
+    <p>
+        <span>Displacement:</span>
+        <input type="number" name="displacement" value="@Model.Displacement" disabled />
+    </p>
+
+    <p>
+        <span>Performance:</span>
+        <input type="number" name="performance" value="@Model.Performance" disabled />
+    </p>
+
+    <p>
+        <span>Drive Type:</span>
+        <input type="text" name="drivetype" value="@Model.DriveType" disabled />
+    </p>
+    
+    <p>
+        <span>Fuel:</span>
+        <input type="text" name="fuel" value="@Model.Fuel" disabled />
+    </p>
+
+    <p>
+        <span>Transmission:</span>
+        <input type="text" name="transmission" value="@Model.Transmission" disabled />
+    </p>
+
+    <p>
+        <span>Doors Count:</span>
+        <input type="number" name="doorsCount" value="@Model.DoorsCount" disabled />
+    </p>
+
+    <button type="submit">Delete Model</button>
+    <button>
+        <a asp-controller="Vechicle" asp-action="Index">Cancel</a>
+    </button>
+</form>

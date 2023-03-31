@@ -42,5 +42,10 @@ namespace Cars_Catalog_Projekt.Services
 
             //throw new NotImplementedException();
         }
+
+        public IEnumerable<CarModel> GetAll()
+        {
+            return modelRepository.GetAll();
+        }
     }
 }

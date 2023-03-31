@@ -11,6 +11,8 @@ using Cars_Catalog_Projekt.Data.Entities;
 using Cars_Catalog_Projekt.Repositories;
 using Cars_Catalog_Projekt.Services;
 using System.Net.Http.Headers;
+using System.Runtime;
+using System.Xml.Linq;
 
 namespace Car_Catalog_Tests
 {
@@ -62,6 +64,14 @@ namespace Car_Catalog_Tests
             brandRepository.AddBrand(brand);
             Assert.NotNull(brandService.GetBrandById(id));
             VerifyBrandProperties(id,name);
+        }
+
+        [Test]
+        public void GetAllShouldReturnAllBrands()
+        {
+            Brand brand = new Brand(10, "NewBrand");
+            brandService.AddBrand(brand);
+            Assert.True(brandRepository.GetAll().Count() > 0);
         }
 
         [Test]

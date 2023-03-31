@@ -14,6 +14,12 @@ namespace Cars_Catalog_Projekt.Controllers
             this.brandService = brandService;
         }
 
+        public IActionResult Index()
+        {
+            var brands = brandService.GetAll();
+
+            return View(brands);
+        }
 
         public IActionResult Create()
         {
@@ -30,10 +36,10 @@ namespace Cars_Catalog_Projekt.Controllers
 
         public IActionResult Edit(int id)
         {
-            var model = brandService.GetBrandById(id);
-            return View(model);
+            var brand = brandService.GetBrandById(id);
+            return View(brand);
         }
-
+        [HttpPost]
         public IActionResult Edit(Brand brand)
         {
             brandService.EditBrand(brand);
@@ -46,6 +52,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(brand);
         }
 
+        [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
             brandService.DeleteBrand(id);

@@ -11,6 +11,8 @@ using Cars_Catalog_Projekt.Data.Entities;
 using Cars_Catalog_Projekt.Repositories;
 using Cars_Catalog_Projekt.Services;
 using System.Net.Http.Headers;
+using Cars_Catalog_Projekt.Repositories.Interfaces;
+using Cars_Catalog_Projekt.Services.Interfaces;
 
 namespace Car_Catalog_Tests
 {
@@ -83,6 +85,15 @@ namespace Car_Catalog_Tests
             Assert.NotNull(vechicleService.GetVechicleById(id));
             VerifyVechicleProperties(id, modelId, year, color, displacement, performance,
               driveType, fuel, transmission, doorsCount);
+        }
+
+        [Test]
+        public void GetAllShouldReturnAllVechicles()
+        {
+            Vechicle vechicle = new Vechicle(10, 2, 1999, "green", 1900, 130, "front", "diesel", 
+                 "manual", 4);
+            vechicleService.AddVechicle(vechicle);
+            Assert.True(vechicleRepository.GetAllVechicles().Count() > 0);
         }
 
         [Test]

@@ -4,11 +4,25 @@
 @{
 }
 
+<button>
+    <a asp-controller="Brand" asp-action="Create">Create</a>
+</button>
+
 
 @model List<Brand>
 @foreach (var brand in Model)
 {
         <div>
             <p style="">Brand: @brand.Name</p>
+
+            <button>
+                <a asp-controller="Brand" asp-action="Edit" asp-route-id="@brand.Id">Edit</a>
+            </button>
+
+            <button>
+                <a asp-controller="Brand" asp-action="Delete" asp-route-id="@brand.Id">Delete</a>
+            </button>
+
+            
         </div>
 }
