@@ -39,6 +39,7 @@ namespace Cars_Catalog_Projekt.Controllers
             var brand = brandService.GetBrandById(id);
             return View(brand);
         }
+
         [HttpPost]
         public IActionResult Edit(Brand brand)
         {

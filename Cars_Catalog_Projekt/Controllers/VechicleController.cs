@@ -26,7 +26,6 @@ namespace Cars_Catalog_Projekt.Controllers
         }
 
         [HttpPost]
-
         public IActionResult Create(Vechicle vechicle) 
         {
             vechicleService.AddVechicle(vechicle);
@@ -39,6 +38,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(vechicle);
         }
 
+        [HttpPost]
         public IActionResult Edit(Vechicle vechicle) 
         { 
             vechicleService.EditVechicle(vechicle);
@@ -51,6 +51,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(vechicle);
         }
 
+        [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
             vechicleService.DeleteVechicle(id);

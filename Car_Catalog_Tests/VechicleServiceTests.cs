@@ -39,13 +39,6 @@ namespace Car_Catalog_Tests
             context.Database.EnsureDeleted();
         }
 
-        /*private Brand CreateBrand(int id, string name)
-        {
-            Brand brand = new Brand();
-
-           
-        }*/
-
         public void VerifyVechicleProperties(int id, int modelId, int year, string color,
             int displacement, int performance, string driveType, string fuel, string transmission,
             int doorsCount)
@@ -118,21 +111,39 @@ namespace Car_Catalog_Tests
               driveType, fuel, transmission, doorsCount);
         }
 
-        /*[Test] ToDO
+        [Test] 
         public void EditShouldWorkCorrectly()
         {
             int id = 3;
-            int brandId = 2;
-            Vechicle vechicle = new Vechicle(id, "vechicleToEdit", brandId);
-            vechicleRepository.Addvechicle(vechicle);
+            Vechicle vechicle = new Vechicle(id, 2, 2000, "yellow", 2100,
+                200, "front", "gasoline", "manual", 3 ) ;
+            vechicleRepository.AddVechicle(vechicle);
 
-            string name = "EditedModel";
+            int modelId = 3;
+            int year = 2001;
+            string color = "red";
+            int displacement = 1900;
+            int performance = 90;
+            string driveType = "4x4";
+            string fuel = "diesel";
+            string transmission = "automatic";
+            int doorsCount = 4;
 
-            vechicle.Name = name;
+            vechicle.ModelId = modelId;
+            vechicle.Year = year;
+            vechicle.Color = color;
+            vechicle.Displacement = displacement;
+            vechicle.Performance = performance;
+            vechicle.DriveType = driveType;
+            vechicle.Fuel = fuel;
+            vechicle.Transmission = transmission;
+            vechicle.DoorsCount = doorsCount;
 
-            modelService.EditModel(vechicle);
-            VerifyModelProperties(id, name, brandId);
-        }*/
+
+            vechicleService.EditVechicle(vechicle);
+            VerifyVechicleProperties(id, modelId, year, color, displacement, performance, driveType,
+                fuel, transmission, doorsCount);
+        }
 
         [Test]
         public void DeleteShouldRemoveBrandCorrectly()

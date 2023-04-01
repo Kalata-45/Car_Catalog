@@ -1,8 +1,12 @@
 ﻿using Cars_Catalog_Projekt.Data;
 using Cars_Catalog_Projekt.Data.Entities;
 using Cars_Catalog_Projekt.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query;
 
-namespace Cars_Catalog_Projekt.Repositories 
+using System.Linq;
+
+namespace Cars_Catalog_Projekt.Repositories
 {
     public class ModelRepository : IModelRepository
     {
@@ -41,6 +45,7 @@ namespace Cars_Catalog_Projekt.Repositories
             //throw new NotImplementedException();
         }
 
+        
         public IEnumerable<CarModel> GetAll()
         {
             return context.Models.ToList();

@@ -40,6 +40,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public IActionResult Edit(CarModel model)
         {
             modelService.EditModel(model);
@@ -52,6 +53,7 @@ namespace Cars_Catalog_Projekt.Controllers
             return View(model);
         }
 
+        [HttpPost]
         public IActionResult DeleteConfirm(int id)
         {
             modelService.DeleteModel(id);

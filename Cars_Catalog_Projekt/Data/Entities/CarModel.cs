@@ -1,9 +1,12 @@
-﻿namespace Cars_Catalog_Projekt.Data.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Cars_Catalog_Projekt.Data.Entities
 {
     public class CarModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
+
         public int BrandId { get; set; }
 
         public CarModel()
@@ -15,8 +18,5 @@
             Name = name;
             BrandId = brandId;
         }
-
-
-
     }
 }
